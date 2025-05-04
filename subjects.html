@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERV</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 2rem 0;
+            text-transform: uppercase;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .button-container {
+            width: 50%;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            padding: 0.5rem 0;
+        }
+
+        .button-container button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+        }
+
+        .button-container button:hover {
+            text-decoration: underline;
+        }
+
+        .description {
+            margin: 2rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            display: none;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the NERV infiltrated section (secret).</h1>
+    <div class="buttons">
+        <div class="button-container">
+            <button onclick="showDescription('rei')">Subject-001</button>
+        </div>
+        <div class="button-container">
+            <button onclick="showDescription('eva')">Subject-002</button>
+        </div>
+        <div class="button-container">
+            <button onclick="hideDescriptions()">Clear informations</button>
+        </div>
+    </div>
+    <div id="rei" class="description">
+        <h2>Rei's Mental Health</h2>
+        <p>Rei Ayanami is a complex individual with a mysterious past. Her mental health is deeply tied to her identity as a clone and her role as a pilot for NERV. She often exhibits a stoic demeanor, but beneath the surface, she struggles with existential questions and her sense of self-worth. Her interactions with others, particularly Shinji Ikari and Gendo Ikari, reveal her inner conflicts and her journey toward understanding her humanity.</p>
+    </div>
+    <div id="eva" class="description">
+        <h2>Eva-01</h2>
+        <p>Eva-01, also known as the Test Type, is one of the most iconic Evangelion units. It is piloted by Shinji Ikari and plays a central role in the battles against the Angels. Eva-01 is unique due to its connection to Yui Ikari, Shinji's mother, whose soul resides within the unit. This connection gives Eva-01 extraordinary abilities, including berserk mode, where it acts independently to protect its pilot. The unit's design and capabilities make it a critical asset for NERV, but its origins and purpose are shrouded in mystery, tied to the Human Instrumentality Project.</p>
+    </div>
+    <footer>
+        <span>NERV© - All rights reserved</span>
+        <a href="main.html">We do not exist.</a>
+    </footer>
+    <script>
+        function showDescription(id) {
+            hideDescriptions();
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hideDescriptions() {
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(desc => desc.style.display = 'none');
+        }
+    </script>
+</body>
+</html>
