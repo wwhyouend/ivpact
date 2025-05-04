@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>800 Days Cooldown</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #00ff00;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            animation: glitch 1s infinite;
+        }
+        #countdown {
+            font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            animation: glitch 1.5s infinite;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 1em;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px #ff0000, -2px -2px #0000ff;
+            }
+            50% {
+                text-shadow: -2px -2px #ff0000, 2px 2px #0000ff;
+            }
+            100% {
+                text-shadow: 2px 2px #ff0000, -2px -2px #0000ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Time left</h1>
+    <div id="countdown">Loading...</div>
+    <a href="learn_more.html">Deeper</a>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+        const cooldownDuration = 800 * 24 * 60 * 60 * 1000; // 800 days in milliseconds
+        const endTime = Date.now() + cooldownDuration;
+
+        function updateCountdown() {
+            const now = Date.now();
+            const timeLeft = endTime - now;
+
+            if (timeLeft <= 0) {
+                countdownElement.textContent = "It is the end.";
+                clearInterval(interval);
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call to display immediately
+    </script>
+</body>
+</html>

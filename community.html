@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四の衝撃 - Reality of the 4th Impact</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "MS Gothic", monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+            color: #00ff00;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            color: #ff0000;
+            background: transparent;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite;
+        }
+        .glitch::after {
+            color: #0000ff;
+            animation-delay: 1s;
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            25% {
+                clip: rect(0, 900px, 20px, 0);
+            }
+            50% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            75% {
+                clip: rect(0, 900px, 15px, 0);
+            }
+            100% {
+                clip: rect(0, 900px, 0, 0);
+            }
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch" data-text="第四の衝撃">第四の衝撃</h1>
+        <p>現実とは何か？第四の衝撃がもたらす真実を探る。</p>
+        <p>第四の衝撃（4th Impact）は、使徒（Angels）と人類の運命を決定づける出来事です。この衝撃は、NERVとその敵対組織IVPACT（アイヴパクト）の間の対立を激化させました。</p>
+        <p>NERVは人類を守るためにエヴァンゲリオンを運用する組織であり、使徒の脅威を排除することを目的としています。一方、IVPACTは使徒を支持し、人類の進化を促進するために彼らと共存することを提唱しています。</p>
+        <p>IVPACTは、NERVの計画を妨害し、使徒を保護するために様々な活動を行っています。この対立は、第四の衝撃の発生を引き金にしてさらに深刻化しました。第四の衝撃は、地球規模の破壊を引き起こし、人類の存続を脅かすものでした。</p>
+        <p>このサイトでは、第四の衝撃の詳細、NERVとIVPACTの関係、そして彼らがどのように敵対するようになったのかについて探求します。</p>
+        <p>IVPACTの理念は、使徒を「敵」ではなく「進化の鍵」として捉えることにあります。しかし、NERVはこれを危険視し、IVPACTを人類の敵と見なしています。この対立は、単なる思想の違いを超え、戦争の様相を呈しています。</p>
+        <p>あなたはどちらの側に立つべきでしょうか？真実を見極めるのはあなた次第です。</p>
+    </div>
+    <footer>
+        <p>© 2025 - あさくさふぉくす14 <a href="main.html">deeper</a></p>
+    </footer>
+</body>
+</html>

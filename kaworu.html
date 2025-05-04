@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Kaworu</title>
+    <style>
+        /* General styling inspired by Wired from Lain and Controle */
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1, h2 {
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0.5em 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #f00;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #0ff;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #0f0;
+            padding: 1em;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px #0f0;
+        }
+
+        .glitch {
+            position: relative;
+            display: inline-block;
+            color: #0f0;
+            font-size: 1.2em;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite;
+        }
+
+        .glitch::before {
+            color: #f00;
+            animation-delay: 0.2s;
+        }
+
+        .glitch::after {
+            color: #0ff;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            25% {
+                clip: rect(10px, 900px, 30px, 0);
+                transform: translate(-2px, -2px);
+            }
+            50% {
+                clip: rect(20px, 900px, 40px, 0);
+                transform: translate(2px, 2px);
+            }
+            75% {
+                clip: rect(5px, 900px, 25px, 0);
+                transform: translate(-1px, 1px);
+            }
+            100% {
+                clip: rect(0, 900px, 0, 0);
+            }
+        }
+
+        a {
+            color: #0ff;
+            text-decoration: none;
+            border-bottom: 1px dashed #0ff;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #f00;
+            border-bottom: 1px dashed #f00;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Kaworu</h1>
+        <h2>The Angel of Free Will</h2>
+        <p class="glitch" data-text="A synthetic being, designed to connect humanity to the divine.">A synthetic being, designed to connect humanity to the divine.</p>
+        <p>Explore the enigmatic nature of Kaworu Nagisa, a product of Seele's machinations and a symbol of hope and despair.</p>
+        <p><a id="learnMoreLink">Learn More</a></p>
+        <div id="fullStory" class="hidden">
+            <p>Kaworu Nagisa, also known as Tabris, is the 17th Angel in the Neon Genesis Evangelion series. He is introduced as a mysterious and charismatic figure who forms a deep connection with Shinji Ikari. Kaworu's role is pivotal as he represents both the hope of understanding and the despair of betrayal. His brief but impactful appearance leaves a lasting impression on the audience, symbolizing themes of free will, love, and sacrifice.</p>
+            <p>In the series, Kaworu's true nature as an Angel is revealed, and he ultimately chooses to sacrifice himself to save humanity, leaving Shinji with a profound sense of loss and growth. His story is a testament to the complexity of human emotions and the struggle between duty and desire.</p>
+        </div>
+    </div>
+
+    <script>
+        const learnMoreLink = document.getElementById('learnMoreLink');
+        const fullStory = document.getElementById('fullStory');
+
+        learnMoreLink.addEventListener('click', () => {
+            fullStory.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

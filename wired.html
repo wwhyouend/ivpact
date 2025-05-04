@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navi Interface</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+
+        button {
+            background-color: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        #map, #faelfilth {
+            margin-top: 20px;
+            border: 1px solid #0f0;
+            padding: 20px;
+            width: 80%;
+            height: 300px;
+            display: none;
+            overflow-y: auto;
+        }
+
+        .lain-style {
+            font-size: 18px;
+            line-height: 1.5;
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+        }
+
+        .lain-style h2 {
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Wired</h1>
+        <p>Please enter your name to proceed:</p>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="showMap()">Enter</button>
+        <div id="map" class="lain-style">
+            <h2>Asaku14</h2>
+            <p>Welcome to the Wired, traveler.</p>
+            <p>Asaku14 is a concept deeply rooted in the exploration of identity, technology, and the boundaries of reality.</p>
+            <p>In this dimension, we embrace the unknown, the digital, and the interconnectedness of all things.</p>
+            <p>Remember: "No matter where you go, everyone is always connected."</p>
+        </div>
+        <div id="faelfilth" class="lain-style">
+            <h2>Faelfilth</h2>
+            <p>Faelfilth is a black metal digital concept that merges the raw intensity of black metal with the boundless possibilities of the digital realm.</p>
+            <p>It explores themes of chaos, rebellion, and the dark beauty of the interconnected digital age.</p>
+            <p>Through Faelfilth, we delve into the symphony of distortion, the poetry of code, and the unrelenting spirit of creation.</p>
+            <p>Embrace the noise, embrace the digital void.</p>
+        </div>
+    </div>
+
+    <script>
+        function showMap() {
+            const username = document.getElementById('username').value;
+            if (username.trim() === '') {
+                alert('Please enter your name.');
+                return;
+            }
+            document.getElementById('map').style.display = 'block';
+            document.getElementById('faelfilth').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

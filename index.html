@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Press Start 2P', monospace;
+            background-color: #111;
+            color: #0ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .container {
+            text-align: center;
+            animation: glitch 1s infinite;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        a {
+            color: #f0f;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(2px, -2px);
+            }
+            60% {
+                transform: translate(-2px, -2px);
+            }
+            80% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4th impact</h1>
+        <p>Welcome to the network.</p>
+        <a href="cooldown.html" target="_blank">Dive Deeper</a>
+    </div>
+</body>
+</html>
